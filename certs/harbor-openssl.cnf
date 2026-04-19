@@ -1,0 +1,22 @@
+[ req ]
+default_bits       = 4096
+prompt             = no
+default_md         = sha256
+req_extensions     = req_ext
+distinguished_name = dn
+
+[ dn ]
+C  = CN
+ST = Beijing
+L  = Beijing
+O  = MyCorp
+OU = DevOps
+CN = harbor.mycorp.local
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = harbor.mycorp.local
+DNS.2 = harbor
+IP.1  = 192.168.0.40
